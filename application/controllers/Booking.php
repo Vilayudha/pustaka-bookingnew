@@ -83,10 +83,10 @@ class Booking extends CI_Controller
 			redirect(base_url() . 'home');
 		}
 
-		//jika buku yang akan dibooking sudah mencapai 3 item
-		if ($tempuser == 3) 
+		//jika buku yang akan dibooking sudah mencapai 6 item
+		if ($tempuser == 6) 
 		{
-			$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Booking Buku Tidak Boleh Lebih dari 3</div>');
+			$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Booking Buku Tidak Boleh Lebih dari 6</div>');
 			redirect(base_url() . 'home');
 		}
 
@@ -145,8 +145,7 @@ class Booking extends CI_Controller
 		$this->load->view('templates/templates-user/modal');
 		$this->load->view('templates/templates-user/footer');
 	}
-
-
+	
 	public function exportToPdf()
 	{
 		$id_user = $this->session->userdata('id_user');
@@ -170,3 +169,4 @@ class Booking extends CI_Controller
 		$this->dompdf->stream("bukti-booking-$id_user.pdf", array('Attachment' => 0));
 	}
 }
+

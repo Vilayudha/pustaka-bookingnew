@@ -1,4 +1,4 @@
-b<!-- Begin Page Content -->
+<!-- Begin Page Content -->
 <div class="container-fluid">
 
     <?= $this->session->flashdata('pesan'); ?>
